@@ -12,7 +12,7 @@ const Home = () => {
             try {
                 
                 setIsLoading(true);
-                const response = await fetchFilms('/3/trending/movie/day', controller);
+                const response = await fetchFilms('/3/trending/movie/day');
                 setTrendingFilms([...response.results]);
 
             } catch (error) {
@@ -24,7 +24,7 @@ const Home = () => {
 
             
             return () => {
-                controller.abort();
+                // controller.abort();
             };
         }, []);
 

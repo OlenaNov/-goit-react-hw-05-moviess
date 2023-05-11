@@ -26,7 +26,7 @@ const Movies = () => {
         // const controller = new AbortController();
         try {
             setIsLoading(true);
-            const response = await fetchFilms('/3/search/movie', controller, valueSearch);
+            const response = await fetchFilms('/3/search/movie', valueSearch);
             setSearchFilms([...response.results]);
         } catch(error) {
             Notify.failure('OOps! Error loading information. Please, try again!');
@@ -34,18 +34,18 @@ const Movies = () => {
             setIsLoading(false);
         };
 
-        return () => controller.abort();
+        // return () => controller.abort();
 
     }, [valueSearch]);
 
     
     const handleSubmit = async value => {
         setSearchValue({ value });
-                const controller = new AbortController();
+                // const controller = new AbortController();
 
         try {
             setIsLoading(true);
-            const response = await fetchFilms('/3/search/movie', controller, value);
+            const response = await fetchFilms('/3/search/movie', value);
             setSearchFilms([...response.results]);
         } catch(error) {
             Notify.failure('OOps! Error loading information. Please, try again!');

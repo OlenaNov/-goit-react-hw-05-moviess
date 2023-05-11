@@ -17,7 +17,7 @@ const MovieDetails = () => {
 
             try {
                 setIsLoading(true);
-                const response = await fetchFilms(`/3/movie/${movieId}`, controller);
+                const response = await fetchFilms(`/3/movie/${movieId}`);
                 setInfoFilm(response);
             } catch (error) {
                 Notify.failure('OOps! Error loading information. Please, try again!');
@@ -25,7 +25,7 @@ const MovieDetails = () => {
                 setIsLoading(false);
             };
 
-            return () => controller.abort();
+            // return () => controller.abort();
     }, [movieId]);
 
 

@@ -9,7 +9,7 @@ const fetchFilms = async (typeRequest, controller, query) => {
     const request = await axios.get(typeRequest, {
         params: {
             api_key: API_KEY,
-            controller,
+            signal: controller.signal,
             query,
         }
     });

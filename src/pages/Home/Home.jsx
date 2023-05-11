@@ -8,7 +8,7 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => async () => {
-            const controller = new AbortController();
+            // const controller = new AbortController();
             try {
                 
                 setIsLoading(true);

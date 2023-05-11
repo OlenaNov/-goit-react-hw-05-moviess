@@ -23,7 +23,7 @@ const Movies = () => {
         if(valueSearch === '') {
             return;
         };
-        const controller = new AbortController();
+        // const controller = new AbortController();
         try {
             setIsLoading(true);
             const response = await fetchFilms('/3/search/movie', controller, valueSearch);

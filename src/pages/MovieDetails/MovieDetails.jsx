@@ -14,7 +14,7 @@ const MovieDetails = () => {
     const { movieId } = useParams();
 
     useEffect(() => async () => {
-        const controller = new AbortController();
+
             try {
                 setIsLoading(true);
                 const response = await fetchFilms(`/3/movie/${movieId}`, controller);

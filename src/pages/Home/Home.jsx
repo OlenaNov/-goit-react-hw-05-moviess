@@ -8,11 +8,11 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => async () => {
-            // const controller = new AbortController();
+            const controller = new AbortController();
             try {
                 
                 setIsLoading(true);
-                const response = await fetchFilms('/3/trending/movie/day');
+                const response = await fetchFilms('/3/trending/movie/day', controller);
                 setTrendingFilms([...response.results]);
 
             } catch (error) {
@@ -24,7 +24,7 @@ const Home = () => {
 
             
             return () => {
-                // controller.abort();
+                controller.abort();
             };
         }, []);
 

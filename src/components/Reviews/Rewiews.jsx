@@ -9,22 +9,24 @@ const Reviews = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [infoReviews, setInfoReviews] = useState(null);
 
-
-    useEffect(() => async () => {
-        const controller = new AbortController();
+    const seeRewiews = async (controller, movieId) => {
         try {
             setIsLoading(true);
             const response = await fetchFilms(`/3/movie/${movieId}/reviews`, controller);
             setInfoReviews(response.results);
         } catch (error) {
-            Notify.failure('OOps! Error loading information. Please, try again!');
+            if(error.code !== 'ERR_CANCELED') {
+                Notify.failure('OOps! Error loading information. Please, try again!');
+            };
         } finally {
             setIsLoading(false);
         };
-        
-        return () => {
-            controller.abort();
-        };
+    };
+
+    useEffect(() => {
+        const controller = new AbortController();
+        seeRewiews(controller, movieId);
+        return () => controller.abort();
     }, [movieId]);
 
     return (

@@ -9,21 +9,24 @@ const Cast = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [infoCast, setInfoCast] = useState(null);
 
-    useEffect(() => async () => {
-
-        const controller = new AbortController();
+    const seeCast = async (controller, movieId) => {
         try {
             setIsLoading(true);
             const response = await fetchFilms(`/3/movie/${movieId}/credits`, controller);
             setInfoCast(response);
         } catch (error) {
-            Notify.failure('OOps! Error loading information. Please, try again!');
+            if(error.code !== 'ERR_CANCELED') {
+                Notify.failure('OOps! Error loading information. Please, try again!');
+            };
         } finally {
             setIsLoading(false);
         };
+    };
+    useEffect(() => {
 
+        const controller = new AbortController();
+        seeCast(controller, movieId);
         return () => controller.abort();
-
     }, [movieId]);
 
     return (

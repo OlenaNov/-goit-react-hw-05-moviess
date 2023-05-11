@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -12,7 +12,7 @@ const Movies = () => {
     const [searchValue, setSearchValue] = useSearchParams();
     const valueSearch = searchValue.get('value');
 
-    const searchMovies = async (controller) => {
+    const searchMovies = async (controller, valueSearch) => {
         try {
             setIsLoading(true);
             const response = await fetchFilms('/3/search/movie', controller, valueSearch);
@@ -29,7 +29,7 @@ const Movies = () => {
     useEffect(() => {
         if(valueSearch) {
             const controller = new AbortController();
-            searchMovies(controller);
+            searchMovies(controller, valueSearch);
             return () => controller.abort();
         };
     }, [valueSearch]);

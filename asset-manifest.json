@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-moviess/static/css/main.ed681940.css",
-    "main.js": "/goit-react-hw-05-moviess/static/js/main.775e415a.js",
-    "static/js/783.9e6de639.chunk.js": "/goit-react-hw-05-moviess/static/js/783.9e6de639.chunk.js",
-    "static/js/688.0f4e720d.chunk.js": "/goit-react-hw-05-moviess/static/js/688.0f4e720d.chunk.js",
-    "static/js/152.786290dd.chunk.js": "/goit-react-hw-05-moviess/static/js/152.786290dd.chunk.js",
-    "static/js/273.bfb9fdc6.chunk.js": "/goit-react-hw-05-moviess/static/js/273.bfb9fdc6.chunk.js",
-    "static/js/877.68348c15.chunk.js": "/goit-react-hw-05-moviess/static/js/877.68348c15.chunk.js",
-    "static/js/202.d863f370.chunk.js": "/goit-react-hw-05-moviess/static/js/202.d863f370.chunk.js",
-    "static/js/150.87091f7e.chunk.js": "/goit-react-hw-05-moviess/static/js/150.87091f7e.chunk.js",
-    "static/js/264.7969e556.chunk.js": "/goit-react-hw-05-moviess/static/js/264.7969e556.chunk.js",
-    "index.html": "/goit-react-hw-05-moviess/index.html",
-    "main.ed681940.css.map": "/goit-react-hw-05-moviess/static/css/main.ed681940.css.map",
-    "main.775e415a.js.map": "/goit-react-hw-05-moviess/static/js/main.775e415a.js.map",
-    "783.9e6de639.chunk.js.map": "/goit-react-hw-05-moviess/static/js/783.9e6de639.chunk.js.map",
-    "688.0f4e720d.chunk.js.map": "/goit-react-hw-05-moviess/static/js/688.0f4e720d.chunk.js.map",
-    "152.786290dd.chunk.js.map": "/goit-react-hw-05-moviess/static/js/152.786290dd.chunk.js.map",
-    "273.bfb9fdc6.chunk.js.map": "/goit-react-hw-05-moviess/static/js/273.bfb9fdc6.chunk.js.map",
-    "877.68348c15.chunk.js.map": "/goit-react-hw-05-moviess/static/js/877.68348c15.chunk.js.map",
-    "202.d863f370.chunk.js.map": "/goit-react-hw-05-moviess/static/js/202.d863f370.chunk.js.map",
-    "150.87091f7e.chunk.js.map": "/goit-react-hw-05-moviess/static/js/150.87091f7e.chunk.js.map",
-    "264.7969e556.chunk.js.map": "/goit-react-hw-05-moviess/static/js/264.7969e556.chunk.js.map"
+    "main.css": "/goit-react-hw-05-movies/static/css/main.ed681940.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.a1420157.js",
+    "static/js/783.9e6de639.chunk.js": "/goit-react-hw-05-movies/static/js/783.9e6de639.chunk.js",
+    "static/js/688.0f4e720d.chunk.js": "/goit-react-hw-05-movies/static/js/688.0f4e720d.chunk.js",
+    "static/js/152.786290dd.chunk.js": "/goit-react-hw-05-movies/static/js/152.786290dd.chunk.js",
+    "static/js/273.bfb9fdc6.chunk.js": "/goit-react-hw-05-movies/static/js/273.bfb9fdc6.chunk.js",
+    "static/js/877.68348c15.chunk.js": "/goit-react-hw-05-movies/static/js/877.68348c15.chunk.js",
+    "static/js/202.d863f370.chunk.js": "/goit-react-hw-05-movies/static/js/202.d863f370.chunk.js",
+    "static/js/150.87091f7e.chunk.js": "/goit-react-hw-05-movies/static/js/150.87091f7e.chunk.js",
+    "static/js/264.7969e556.chunk.js": "/goit-react-hw-05-movies/static/js/264.7969e556.chunk.js",
+    "index.html": "/goit-react-hw-05-movies/index.html",
+    "main.ed681940.css.map": "/goit-react-hw-05-movies/static/css/main.ed681940.css.map",
+    "main.a1420157.js.map": "/goit-react-hw-05-movies/static/js/main.a1420157.js.map",
+    "783.9e6de639.chunk.js.map": "/goit-react-hw-05-movies/static/js/783.9e6de639.chunk.js.map",
+    "688.0f4e720d.chunk.js.map": "/goit-react-hw-05-movies/static/js/688.0f4e720d.chunk.js.map",
+    "152.786290dd.chunk.js.map": "/goit-react-hw-05-movies/static/js/152.786290dd.chunk.js.map",
+    "273.bfb9fdc6.chunk.js.map": "/goit-react-hw-05-movies/static/js/273.bfb9fdc6.chunk.js.map",
+    "877.68348c15.chunk.js.map": "/goit-react-hw-05-movies/static/js/877.68348c15.chunk.js.map",
+    "202.d863f370.chunk.js.map": "/goit-react-hw-05-movies/static/js/202.d863f370.chunk.js.map",
+    "150.87091f7e.chunk.js.map": "/goit-react-hw-05-movies/static/js/150.87091f7e.chunk.js.map",
+    "264.7969e556.chunk.js.map": "/goit-react-hw-05-movies/static/js/264.7969e556.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ed681940.css",
-    "static/js/main.775e415a.js"
+    "static/js/main.a1420157.js"
   ]
 }

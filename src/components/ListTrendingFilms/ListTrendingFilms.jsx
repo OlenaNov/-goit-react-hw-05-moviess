@@ -1,5 +1,6 @@
 import { useLocation, } from "react-router-dom";
-import { List, Item, LinkStyled } from "./ListTrendingFilms.styled";
+import { List } from "./ListTrendingFilms.styled";
+import Item from "components/Item/Item";
 
 const ListTrendingFilms = ({ items }) => {
     const location = useLocation();
@@ -7,14 +8,11 @@ const ListTrendingFilms = ({ items }) => {
     return (
         <List>
         {items.map(item => (
-            <Item key={item.id}>
-                <LinkStyled 
-                    to={`movies/${item.id}`} 
-                    state={{ from: location}}
-                    >
-                    {item.title}
-                </LinkStyled>
-            </Item>
+            <Item 
+                key={item.id} 
+                location={location}
+                item={item}
+                />
         ))}
         </List> 
     )

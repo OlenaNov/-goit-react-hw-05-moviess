@@ -1,4 +1,4 @@
-import { Poster, StyledLink, Wrapper } from "./ItemMovie.styled";
+import { Genre, Genres, Poster, StyledLink, Wrapper } from "./Movie.styled";
 
 const ItemMovie = ({ item, link }) => {
     return (
@@ -14,9 +14,9 @@ const ItemMovie = ({ item, link }) => {
                     <h3>Overview</h3>
                     <p>{item.overview}</p>
                     <h3>Genres</h3>
-                    <div>
-                        {item.genres.map(genere => (<span key={genere.id}>{genere.name}</span>) )}
-                    </div>
+                    <Genres>
+                        {item.genres.map(genre => (<Genre key={genre.id}>{genre.name}</Genre>) )}
+                    </Genres>
                 </div>
             </Wrapper>
     );

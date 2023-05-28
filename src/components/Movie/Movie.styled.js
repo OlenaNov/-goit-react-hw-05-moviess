@@ -8,6 +8,19 @@ border-radius: 4px;
 box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 `;
 
+export const Genres = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+`;
+
+export const Genre = styled.span`
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid rgba(80, 20, 20, 0.3);
+    background: rgba(80, 20, 20, 0.8);
+`;
+
 export const StyledLink = styled(NavLink)`
 text-decoration: none;
 color: #5252d4;

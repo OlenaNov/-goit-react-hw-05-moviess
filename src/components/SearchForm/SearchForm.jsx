@@ -23,6 +23,7 @@ const SearchForm = ({ onSubmitForm }) => {
             <Input 
                 type='text'
                 value={valueInput}
+                placeholder="Enter movie title..."
                 onChange={e => setValueInput(e.target.value)}
             />
             <Submit 

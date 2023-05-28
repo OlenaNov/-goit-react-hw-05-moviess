@@ -4,7 +4,7 @@ import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import fetchFilms from "utilites/api";
 import { StyledLink } from "components/Reviews/Reviews.styled";
-import ItemMovie from "components/ItemMovie";
+import Movie from "components/Movie";
 
 const MovieDetails = () => {
     const location = useLocation();
@@ -37,10 +37,10 @@ const MovieDetails = () => {
 
     return (
     <>
-        {isLoading && <SyncLoader color="#eb1736" />}
+        {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
         {infoFilm && (
             <>
-            <ItemMovie item={infoFilm} link={backLinkLocationRef.current} />
+            <Movie item={infoFilm} link={backLinkLocationRef.current} />
             <ul>
                 <h3>Additional information</h3>
                 <li>

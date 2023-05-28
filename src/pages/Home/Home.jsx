@@ -33,7 +33,7 @@ const Home = () => {
 
     return (
         <>
-            {isLoading && <SyncLoader color="#eb1736" />}
+            {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
             {trendingFilms.length 
             ? <ListTrendingFilms items={trendingFilms} />
             : null}

@@ -31,7 +31,7 @@ const Reviews = () => {
 
     return (
         <>
-        {isLoading && <SyncLoader color="#eb1736" />}
+        {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
         {infoReviews 
         ? (<ul>
                 {infoReviews.map(item => (

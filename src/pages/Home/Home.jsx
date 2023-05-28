@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import fetchFilms from '../../utilites/api';
-import ListTrendingFilms from "components/ListTrendingFilms";
+import fetchMovies from '../../utilites/api';
+import ListTrendingMovies from "components/ListTrendingMovies";
 
 const Home = () => {
-    const [trendingFilms, setTrendingFilms] = useState([]);
+    const [trendingMovies, setTrendingMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     const searchTrand = async controller => {
         try {
             setIsLoading(true);
-            const response = await fetchFilms('/3/trending/movie/day', controller);
-            setTrendingFilms([...response.results]);
+            const response = await fetchMovies('/3/trending/movie/day', controller);
+            setTrendingMovies([...response.results]);
 
         } catch (error) {
             if(error.code !== 'ERR_CANCELED') {
@@ -34,8 +34,8 @@ const Home = () => {
     return (
         <>
             {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
-            {trendingFilms.length 
-            ? <ListTrendingFilms items={trendingFilms} />
+            {trendingMovies.length 
+            ? <ListTrendingMovies items={trendingMovies} />
             : null}
         </>
     );

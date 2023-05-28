@@ -1,10 +1,12 @@
 import { LinkStyled, Wrapper, PreviewImg, Details, SvgAdult, Title, Date } from "./Item.styled";
 
-const Item  = ({ location, item }) => {
+const Item  = ({ location, item, path }) => {
+
+    const url = path ? `${path}${item.id}` : `${item.id}`;
 
     return (
         <LinkStyled 
-            to={`movies/${item.id}`} 
+            to={`${url}`} 
             state={{ from: location}}
         >
             <Wrapper>

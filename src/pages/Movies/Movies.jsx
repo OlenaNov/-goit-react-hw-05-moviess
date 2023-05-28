@@ -4,7 +4,7 @@ import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import fetchFilms from '../../utilites/api';
 import SearchForm from 'components/SearchForm';
-import ListSearchFilms from 'components/ListSearchFilms';
+import ListSearchFilms from 'components/ListSearchMovies';
 
 const Movies = () => {
     const [isLoading, setIsLoading] = useState(false);

@@ -2,8 +2,8 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import fetchFilms from "utilites/api";
-import { StyledLink } from "components/Reviews/Reviews.styled";
+import { notifyOptionsFailure } from "constants/notifyOptions";
+import fetchMovies from "utilites/api";
 import Movie from "components/Movie";
 
 const MovieDetails = () => {
@@ -14,13 +14,15 @@ const MovieDetails = () => {
     const { movieId } = useParams();
 
     const seeMovieDetails = async (controller, movieId) => {
+        const options = notifyOptionsFailure();
+
         try {
             setIsLoading(true);
-            const response = await fetchFilms(`/3/movie/${movieId}`, controller);
+            const response = await fetchMovies(`/3/movie/${movieId}`, controller);
             setInfoFilm(response);
         } catch (error) {
             if(error.code !== 'ERR_CANCELED') {
-                Notify.failure('OOps! Error loading information. Please, try again!');
+                Notify.failure('OOps! Error loading information. Please, try again!', options);
             };
 
         } finally {
@@ -41,16 +43,7 @@ const MovieDetails = () => {
         {infoFilm && (
             <>
             <Movie item={infoFilm} link={backLinkLocationRef.current} />
-            <ul>
-                <h3>Additional information</h3>
-                <li>
-                    <StyledLink to='cast'>Cast</StyledLink>
-                </li>
-                <li>
-                    <StyledLink to='reviews'>Reviews</StyledLink>
-                </li>
-            </ul>
-                <Suspense fallback={<SyncLoader color="#eb1736" />}>
+                <Suspense fallback={<SyncLoader color="rgb(204, 0, 0, .7)" />}>
                     <Outlet />
                 </Suspense>
             </>

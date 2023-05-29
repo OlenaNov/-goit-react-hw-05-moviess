@@ -1,12 +1,20 @@
-import { Genre, Genres, Poster, Title, Text, Wrapper, LinkBack, Box } from "./Movie.styled";
+import { Genre, Genres, Poster, Title, Text, Wrapper, LinkBack, Box, BasicInfo, AdditionalInfo, List, Item, StyledNavLink } from "./Movie.styled";
+import defaultImage from '../../images/default-movie-poster.jpg';
 
-const ItemMovie = ({ item, link }) => {
+const Movie = ({ item, link }) => {
+
     return (
             <Wrapper>
+                <BasicInfo>
                 <Box>
-                <Poster 
+                {item.poster_path 
+                ? (<Poster 
                     src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} 
-                    alt={`Poster ${item.title}`} />
+                    alt={`Poster ${item.title}`} />)
+                : (<Poster 
+                src={defaultImage} 
+                alt={`Poster ${item.title}`} />)
+                }
                 <LinkBack to={link}>Go Back</LinkBack>
                 <Genres>
                         {item.genres.map(genre => (<Genre key={genre.id}>{genre.name}</Genre>) )}
@@ -17,8 +25,19 @@ const ItemMovie = ({ item, link }) => {
                     <Text>User Score: {Math.round(item.vote_average * 10)}%</Text>
                     <Text>{item.overview}</Text>
                 </div>
+                </BasicInfo>
+                <AdditionalInfo>
+                    <List>
+                        <Item>
+                            <StyledNavLink to='cast'>Cast</StyledNavLink>
+                        </Item>
+                        <Item>
+                            <StyledNavLink to='reviews'>Reviews</StyledNavLink>
+                        </Item>
+                    </List>
+                </AdditionalInfo>
             </Wrapper>
     );
 };
 
-export default ItemMovie;
+export default Movie;

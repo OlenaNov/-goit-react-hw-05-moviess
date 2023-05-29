@@ -1,4 +1,5 @@
 import { LinkStyled, Wrapper, PreviewImg, Details, SvgAdult, Title, Date } from "./Item.styled";
+import defaultImage from '../../images/default-movie-preview.jpg';
 
 const Item  = ({ location, item, path }) => {
 
@@ -10,9 +11,14 @@ const Item  = ({ location, item, path }) => {
             state={{ from: location}}
         >
             <Wrapper>
-                <PreviewImg 
+                {item.poster_path 
+                ? (<PreviewImg 
                     src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} 
-                    alt={`Poster ${item.title}`} />
+                    alt={`Poster ${item.title}`} />)
+                : (<PreviewImg 
+                    src={defaultImage} 
+                    alt={`Poster ${item.title}`} />)
+                }
                 {item.adult && <SvgAdult />}
                 <Details>
                     <Title>{item.original_title}</Title>

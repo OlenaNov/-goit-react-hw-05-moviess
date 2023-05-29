@@ -7,8 +7,7 @@ export const Wrapper = styled.header`
     justify-content: space-between;
     width: 100%;
     height: 60px;
-    padding: 16px;
-    padding-top: 32px;
+    padding: 32px 60px 20px;
     margin-bottom: 16px;
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;

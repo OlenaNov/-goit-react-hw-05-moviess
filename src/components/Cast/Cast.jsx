@@ -1,22 +1,26 @@
 import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { notifyOptionsFailure } from "constants/notifyOptions";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import fetchFilms from "utilites/api";
+import fetchMovies from "utilites/api";
+import { Details, Image, Item, List, SubTitle, Text } from "./Cast.styled";
+import defaultImage from '../../images/empty-photo.png';
 
 const Cast = () => {
     const { movieId } = useParams();
     const [isLoading, setIsLoading] = useState(false);
     const [infoCast, setInfoCast] = useState(null);
+    const options = notifyOptionsFailure();
 
-    const seeCast = async (controller, movieId) => {
+    const openCast = async (controller, movieId) => {
         try {
             setIsLoading(true);
-            const response = await fetchFilms(`/3/movie/${movieId}/credits`, controller);
+            const response = await fetchMovies(`/3/movie/${movieId}/credits`, controller);
             setInfoCast(response);
         } catch (error) {
             if(error.code !== 'ERR_CANCELED') {
-                Notify.failure('OOps! Error loading information. Please, try again!');
+                Notify.failure('OOps! Error loading information. Please, try again!', options);
             };
         } finally {
             setIsLoading(false);
@@ -25,7 +29,7 @@ const Cast = () => {
     useEffect(() => {
 
         const controller = new AbortController();
-        seeCast(controller, movieId);
+        openCast(controller, movieId);
         return () => controller.abort();
     }, [movieId]);
 
@@ -33,15 +37,21 @@ const Cast = () => {
         <>
         {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
         {infoCast && (
-            <ul>
+            <List>
                 {infoCast.cast.map(item => (
-                    <li key={item.id}>
-                        <img src={`https://image.tmdb.org/t/p/original/${item.profile_path}`} alt={item.name}  width='100px' min-height='150px' />
-                        <h3>{item.name}</h3>
-                        {item.character && <p>Character: {item.character}</p>}
-                    </li>
+                    <Item key={item.id}>
+                        {item.profile_path
+                        ? (<Image src={`https://image.tmdb.org/t/p/original/${item.profile_path}`} alt={item.name} />)
+                        : <Image src={defaultImage} alt={item.name} />
+                    }
+                    <Details>
+                        <SubTitle>{item.name}</SubTitle>
+                        {item.character 
+                        && <Text>Character: {item.character}</Text>}
+                    </Details>
+                    </Item>
                 )) }
-            </ul>
+            </List>
         )}
         </>
     );

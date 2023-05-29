@@ -1,22 +1,25 @@
 import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { notifyOptionsFailure } from "constants/notifyOptions";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import fetchFilms from "utilites/api";
+import fetchMovies from "utilites/api";
+import { Item, List, SubTitle, Text } from "./Reviews.styled";
 
 const Reviews = () => {
     const { movieId } = useParams();
     const [isLoading, setIsLoading] = useState(false);
     const [infoReviews, setInfoReviews] = useState(null);
+    const options = notifyOptionsFailure();
 
-    const seeRewiews = async (controller, movieId) => {
+    const openReviews = async (controller, movieId) => {
         try {
             setIsLoading(true);
-            const response = await fetchFilms(`/3/movie/${movieId}/reviews`, controller);
+            const response = await fetchMovies(`/3/movie/${movieId}/reviews`, controller);
             setInfoReviews(response.results);
         } catch (error) {
             if(error.code !== 'ERR_CANCELED') {
-                Notify.failure('OOps! Error loading information. Please, try again!');
+                Notify.failure('OOps! Error loading information. Please, try again!', options);
             };
         } finally {
             setIsLoading(false);
@@ -25,7 +28,7 @@ const Reviews = () => {
 
     useEffect(() => {
         const controller = new AbortController();
-        seeRewiews(controller, movieId);
+        openReviews(controller, movieId);
         return () => controller.abort();
     }, [movieId]);
 
@@ -33,16 +36,16 @@ const Reviews = () => {
         <>
         {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
         {infoReviews 
-        ? (<ul>
+        ? (<List>
                 {infoReviews.map(item => (
-                    <li key={item.id}>
-                        <h3>{item.author}</h3>
-                        <p>{item.content}</p>
-                    </li>
+                    <Item key={item.id}>
+                        <SubTitle>{item.author}</SubTitle>
+                        <Text>{item.content}</Text>
+                    </Item>
                 )) }
-            </ul>)
+            </List>)
             : (<div>
-                <p>'We don`t have any reviews for this movie'</p>
+                <SubTitle>'We don`t have any reviews for this movie'</SubTitle>
                 </div>)}
         </>
     );

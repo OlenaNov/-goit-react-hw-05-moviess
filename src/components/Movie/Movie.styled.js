@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const Wrapper = styled.div`
     display: flex;
     gap: 24px;
-    flex-wrap: no-wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -13,10 +14,16 @@ export const Wrapper = styled.div`
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .9));
     box-shadow: rgba(0, 0, 0, .07) 0px 1px 2px, rgba(0, 0, 0, .07) 0px 2px 4px, rgba(0, 0, 0, .07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, .07) 0px 16px 32px, rgba(0, 0, 0, .07) 0px 32px 64px;
     
+`;
+
+export const BasicInfo = styled.div`
+    display: flex;  
+    gap: 24px;
+    flex-wrap: no-wrap;
+
     @media screen and (max-width: 1024px) {
         flex-wrap: wrap;
-      }
-
+    }
 `;
 
 export const Box = styled.div`
@@ -33,12 +40,14 @@ export const Poster = styled.img`
 
     @media screen and (max-width: 1024px) {
         width: 200px;
-      }
+        margin-left: auto;
+        margin-right: auto;
+    }
 `;
 
 export const Title = styled.h1`
     color: rgb(255, 245, 238, .9);
-    font-size: 20px;
+    font-size: 24px;
 
     @media screen and (min-width: 1024px) {
         font-size: 36px;
@@ -74,7 +83,7 @@ export const Genre = styled.span`
     border-radius: 8px;
     border: 1px solid rgba(80, 20, 20, .3);
     background: rgba(80, 20, 20, .8);
-    color: rgb(255, 245, 238);
+    color: rgb(255, 245, 238, .9);
     font-size: 18px;
 
     
@@ -88,6 +97,56 @@ export const LinkBack = styled(Link)`
     margin-right: auto;
     margin-bottom: 24px;
     padding: 8px;
-    font-size: 18px;
+    font-size: 20px;
     color: rgb(204, 0, 0, .9);
+`;
+
+export const AdditionalInfo = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+`;
+
+export const List = styled.ul`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        gap: 80px;
+      }
+`;
+
+export const Item = styled.li`
+
+`;
+
+export const StyledNavLink = styled(NavLink)`
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: rgb(255, 245, 238, .3);
+    color: rgba(80, 20, 20);
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 3px solid rgba(80, 20, 20);
+
+    
+    @media screen and (min-width: 1024px) {
+        font-size: 26px;
+        padding: 12px 30px;
+    }
+
+    &:hover, &:focus {
+        border-radius: 12px;
+        background-color: rgb(255, 245, 238, .5);
+    }
+
+    
+    &.active {
+        color: rgb(204, 0, 0, .7);
+        background-color: rgb(255, 245, 238, .6);
+    }
 `;

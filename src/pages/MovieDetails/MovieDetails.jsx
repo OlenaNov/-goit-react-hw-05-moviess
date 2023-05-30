@@ -13,9 +13,8 @@ const MovieDetails = () => {
     const [infoFilm, setInfoFilm] = useState(null);
     const { movieId } = useParams();
 
-    const seeMovieDetails = async (controller, movieId) => {
+    const openMovieDetails = async (controller, movieId) => {
         const options = notifyOptionsFailure();
-
         try {
             setIsLoading(true);
             const response = await fetchMovies(`/3/movie/${movieId}`, controller);
@@ -24,7 +23,6 @@ const MovieDetails = () => {
             if(error.code !== 'ERR_CANCELED') {
                 Notify.failure('OOps! Error loading information. Please, try again!', options);
             };
-
         } finally {
             setIsLoading(false);
         };
@@ -32,7 +30,7 @@ const MovieDetails = () => {
 
     useEffect(() => {
         const controller = new AbortController();
-        seeMovieDetails(controller, movieId);
+        openMovieDetails(controller, movieId);
             return () => controller.abort();
     }, [movieId]);
 

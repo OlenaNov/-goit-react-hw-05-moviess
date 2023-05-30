@@ -10,9 +10,9 @@ const Reviews = () => {
     const { movieId } = useParams();
     const [isLoading, setIsLoading] = useState(false);
     const [infoReviews, setInfoReviews] = useState(null);
-    const options = notifyOptionsFailure();
 
     const openReviews = async (controller, movieId) => {
+        const options = notifyOptionsFailure();
         try {
             setIsLoading(true);
             const response = await fetchMovies(`/3/movie/${movieId}/reviews`, controller);

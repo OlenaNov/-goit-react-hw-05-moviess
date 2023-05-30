@@ -9,7 +9,7 @@ const Home = () => {
     const [trendingMovies, setTrendingMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const searchTrand = async controller => {
+    const searchTrends = async controller => {
         const options = notifyOptionsFailure();
 
         try {
@@ -29,7 +29,7 @@ const Home = () => {
 
     useEffect(() => {
             const controller = new AbortController();
-            searchTrand(controller);
+            searchTrends(controller);
 
              return () => controller.abort();
         }, []);

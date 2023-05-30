@@ -9,11 +9,11 @@ import defaultImage from '../../images/empty-photo.png';
 
 const Cast = () => {
     const { movieId } = useParams();
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false)
     const [infoCast, setInfoCast] = useState(null);
-    const options = notifyOptionsFailure();
 
     const openCast = async (controller, movieId) => {
+        const options = notifyOptionsFailure();
         try {
             setIsLoading(true);
             const response = await fetchMovies(`/3/movie/${movieId}/credits`, controller);
@@ -26,6 +26,7 @@ const Cast = () => {
             setIsLoading(false);
         };
     };
+
     useEffect(() => {
 
         const controller = new AbortController();

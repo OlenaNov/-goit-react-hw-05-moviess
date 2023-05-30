@@ -9,14 +9,14 @@ import { Item, List, SubTitle, Text } from "./Reviews.styled";
 const Reviews = () => {
     const { movieId } = useParams();
     const [isLoading, setIsLoading] = useState(false);
-    const [infoReviews, setInfoReviews] = useState(null);
+    const [infoReviews, setInfoReviews] = useState([]);
 
     const openReviews = async (controller, movieId) => {
         const options = notifyOptionsFailure();
         try {
             setIsLoading(true);
             const response = await fetchMovies(`/3/movie/${movieId}/reviews`, controller);
-            setInfoReviews(response.results);
+            setInfoReviews([...response.results]);
         } catch (error) {
             if(error.code !== 'ERR_CANCELED') {
                 Notify.failure('OOps! Error loading information. Please, try again!', options);
@@ -31,11 +31,11 @@ const Reviews = () => {
         openReviews(controller, movieId);
         return () => controller.abort();
     }, [movieId]);
-
+   
     return (
         <>
         {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
-        {infoReviews 
+        {infoReviews.length && !isLoading
         ? (<List>
                 {infoReviews.map(item => (
                     <Item key={item.id}>
@@ -45,8 +45,8 @@ const Reviews = () => {
                 )) }
             </List>)
             : (<div>
-                <SubTitle>'We don`t have any reviews for this movie'</SubTitle>
-                </div>)}
+                <SubTitle>We don`t have any reviews for this movie</SubTitle>
+            </div>)}
         </>
     );
 };

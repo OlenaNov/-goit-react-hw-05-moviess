@@ -3,7 +3,7 @@ import { MdOutlineNoAdultContent } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.li`
-    width: 300px;
+    width: 260px;
     height: 360px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 5px;
@@ -40,7 +40,7 @@ export const Details = styled.div`
     left: 0;
     padding: 12px;
     width: 100%;
-    height: 25%;
+    height: 20%;
     overflow: auto;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
@@ -50,14 +50,14 @@ export const Title = styled.h2`
     margin-block-start: 0;
     margin-block-end: 0;
     margin-bottom: 12px;
-    font-size: 24px;
+    font-size: 20px;
     color: rgb(255, 245, 238, 0.8);
 `;
 
 export const Date = styled.p`
     margin-block-start: 0;
     margin-block-end: 0;
-    font-size: 24px;
+    font-size: 20px;
     color: rgb(255, 245, 238, 0.8);
 `;
 

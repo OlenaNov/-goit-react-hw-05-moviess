@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Box, Logo, StyledLink, Wrapper } from "./Header.styled";
 
 const Header = () => {
@@ -6,11 +5,11 @@ const Header = () => {
     return (
         <Wrapper>
             <Box>
-                <Link to='/'>
-                    <Logo />
-                </Link>
                 <nav>
-                    <StyledLink to='/'>Home</StyledLink>
+                    <StyledLink to='/'>
+                        <Logo />
+                        Home
+                        </StyledLink>
                     <StyledLink to='/movies'>Movies</StyledLink>
                 </nav>
             </Box>

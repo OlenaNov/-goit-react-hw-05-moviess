@@ -9,6 +9,7 @@ body {
   background-image: url('./images/background-home-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),

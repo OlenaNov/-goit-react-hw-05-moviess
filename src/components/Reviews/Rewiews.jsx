@@ -1,10 +1,10 @@
-import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { notifyOptionsFailure } from "constants/notifyOptions";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import fetchMovies from "utilites/api";
 import { Item, List, SubTitle, Text } from "./Reviews.styled";
+import Loader from "components/Loader";
 
 const Reviews = () => {
     const { movieId } = useParams();
@@ -34,16 +34,18 @@ const Reviews = () => {
    
     return (
         <>
-        {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
+        {isLoading && <Loader />}
         {infoReviews.length && !isLoading
-        ? (<List>
+        ? (<div>
+            <List>
                 {infoReviews.map(item => (
                     <Item key={item.id}>
                         <SubTitle>{item.author}</SubTitle>
                         <Text>{item.content}</Text>
                     </Item>
                 )) }
-            </List>)
+            </List>
+        </div>)
             : (<div>
                 <SubTitle>We don`t have any reviews for this movie</SubTitle>
             </div>)}

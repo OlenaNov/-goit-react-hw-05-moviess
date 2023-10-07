@@ -1,10 +1,10 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
-import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { notifyOptionsFailure } from "constants/notifyOptions";
 import fetchMovies from "utilites/api";
 import Movie from "components/Movie";
+import Loader from "components/Loader/Loader";
 
 const MovieDetails = () => {
     const location = useLocation();
@@ -37,11 +37,11 @@ const MovieDetails = () => {
 
     return (
     <>
-        {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
+        {isLoading && <Loader color="rgb(204, 0, 0, .7)" />}
         {infoFilm && (
             <>
             <Movie item={infoFilm} link={backLinkLocationRef.current} />
-                <Suspense fallback={<SyncLoader color="rgb(204, 0, 0, .7)" />}>
+                <Suspense fallback={<Loader color="rgb(204, 0, 0, .7)" />}>
                     <Outlet />
                 </Suspense>
             </>

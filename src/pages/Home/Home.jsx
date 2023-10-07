@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { notifyOptionsFailure } from "constants/notifyOptions";
 import fetchMovies from '../../utilites/api';
 import ListTrendingMovies from "components/ListTrendingMovies";
+import Loader from "components/Loader/Loader";
 
 const Home = () => {
     const [trendingMovies, setTrendingMovies] = useState([]);
@@ -36,7 +36,7 @@ const Home = () => {
 
     return (
         <>
-            {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
+            {isLoading && <Loader color="rgb(204, 0, 0, .7)" />}
             {trendingMovies.length 
             ? <ListTrendingMovies items={trendingMovies} />
             : null}

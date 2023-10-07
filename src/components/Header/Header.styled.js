@@ -3,13 +3,20 @@ import styled from "styled-components";
 import { BiCameraMovie } from 'react-icons/bi';
 
 export const Wrapper = styled.header`
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 20px 40px 16px;
-    margin-bottom: 16px;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 28px 40px 24px;
+    background-color: rgba(0, 0, 0, 0.95);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
+    @media screen and (min-width: 768px) {
+        padding: 36px 40px 32px;
+      }
+
 `;
 
 export const Box = styled.div`
@@ -21,20 +28,38 @@ export const Logo = styled(BiCameraMovie)`
     width: 28px;
     height: 28px;
     margin-right: 12px;
-    color: rgb(255, 245, 238, 0.8);
+    color: inherit;
+
+    @media screen and (min-width: 768px) {
+        width: 36px;
+        height: 36px;
+        margin-right: 16px;
+      }
 `;
 
 export const StyledLink = styled(NavLink)`
-    text-decoration: none;
-    font-size: 28px;
-    padding: 8px;
-    color: rgb(255, 245, 238, 0.8);
+  text-decoration: none;
+  font-size: 28px;
+  padding: 8px;
+  color: rgb(255, 245, 238, 0.8);
+
+    @media screen and (min-width: 768px) {
+        font-size: 36px;
+      }
 
     &:not(:last-child) {
         margin-right: 20px;
       }
 
+    &:hover, &:focus {
+      color: #fff;
+    }
+
     &.active {
         color: #cc0000;
+
+        &:hover, &:focus {
+          color: red;
+        }
     }
 `;

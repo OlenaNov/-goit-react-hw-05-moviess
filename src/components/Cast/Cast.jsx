@@ -1,4 +1,3 @@
-import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { notifyOptionsFailure } from "constants/notifyOptions";
 import { useState, useEffect } from "react";
@@ -6,6 +5,7 @@ import { useParams } from "react-router-dom";
 import fetchMovies from "utilites/api";
 import { Details, Image, Item, List, SubTitle, Text } from "./Cast.styled";
 import defaultImage from '../../images/empty-photo.png';
+import Loader from "components/Loader/Loader";
 
 const Cast = () => {
     const { movieId } = useParams();
@@ -36,7 +36,7 @@ const Cast = () => {
 
     return (
         <>
-        {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
+        {isLoading && <Loader color="rgb(204, 0, 0, .7)" />}
         {infoCast && (
             <List>
                 {infoCast.cast.map(item => (

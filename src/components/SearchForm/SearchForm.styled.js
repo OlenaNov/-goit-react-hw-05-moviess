@@ -5,7 +5,6 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-    width: 280px;
     padding: 12px;
     border: 1px solid rgb(255, 245, 238, 0.2);
     border-radius: 5px;
@@ -18,7 +17,15 @@ export const Input = styled.input`
         border: 1px solid rgb(255, 245, 238, 0.8);
     }
 
+    @media screen and (max-width: 767px) {
+        max-width: 200px;
+      }
+
     @media screen and (min-width: 768px) {
+        width: 500px;
+      }
+
+      @media screen and (min-width: 1280px) {
         width: 600px;
       }
 

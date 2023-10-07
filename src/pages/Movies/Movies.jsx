@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import SyncLoader from "react-spinners/SyncLoader";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { notifyOptionsFailure } from "constants/notifyOptions";
 import fetchFilms from '../../utilites/api';
 import SearchForm from 'components/SearchForm';
 import ListSearchFilms from 'components/ListSearchMovies';
+import Loader from "components/Loader/Loader";
 
 const Movies = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -47,11 +47,11 @@ const Movies = () => {
 
     return (
         <>
-        {isLoading && <SyncLoader color="rgb(204, 0, 0, .7)" />}
+        {isLoading && <Loader color="rgb(204, 0, 0, .7)" />}
         <SearchForm 
             onSubmitForm={handleSubmit} 
         />
-        {searchFilms 
+        {searchFilms.length 
         ? <ListSearchFilms items={searchFilms} />
         : null}
     </>

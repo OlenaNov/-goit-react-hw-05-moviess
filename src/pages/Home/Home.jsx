@@ -36,7 +36,7 @@ const Home = () => {
 
     return (
         <>
-            {isLoading && <Loader color="rgb(204, 0, 0, .7)" />}
+            {isLoading && <Loader />}
             {trendingMovies.length 
             ? <ListTrendingMovies items={trendingMovies} />
             : null}

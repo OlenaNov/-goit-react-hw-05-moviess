@@ -7,7 +7,7 @@ export const notifyOptionsFailure = () => {
         backgroundColor: 'rgb(204, 0, 0, .7)',
         position: 'right-top',
         distance: '60px',
-        textColor: 'rgb(255, 245, 238)',
+        textColor: 'rgb(255, 245, 238, 0.8)',
         fontSize: '20px',
       };
 };

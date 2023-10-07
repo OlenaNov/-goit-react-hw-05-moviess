@@ -47,7 +47,7 @@ const Movies = () => {
 
     return (
         <>
-        {isLoading && <Loader color="rgb(204, 0, 0, .7)" />}
+        {isLoading && <Loader />}
         <SearchForm 
             onSubmitForm={handleSubmit} 
         />

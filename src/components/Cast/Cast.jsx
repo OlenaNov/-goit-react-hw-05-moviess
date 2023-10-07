@@ -36,7 +36,7 @@ const Cast = () => {
 
     return (
         <>
-        {isLoading && <Loader color="rgb(204, 0, 0, .7)" />}
+        {isLoading && <Loader />}
         {infoCast && (
             <List>
                 {infoCast.cast.map(item => (

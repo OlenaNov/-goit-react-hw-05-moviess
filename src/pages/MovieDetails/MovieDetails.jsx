@@ -41,7 +41,7 @@ const MovieDetails = () => {
         {infoFilm && (
             <>
             <Movie item={infoFilm} link={backLinkLocationRef.current} />
-                <Suspense fallback={<Loader color="rgb(204, 0, 0, .7)" />}>
+                <Suspense fallback={<Loader />}>
                     <Outlet />
                 </Suspense>
             </>

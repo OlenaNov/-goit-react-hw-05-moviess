@@ -9,12 +9,12 @@ export const Wrapper = styled.header`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 28px 40px 24px;
+    padding: ${p => p.theme.space[5]} ${p => p.theme.space[8]} ${p => p.theme.space[5]};
     background-color: ${p => p.theme.colors.headerBackground};
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 
-    @media screen and (min-width: 768px) {
-        padding: 36px 40px 32px;
+    @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+        padding: ${p => p.theme.space[6]} ${p => p.theme.space[9]} ${p => p.theme.space[6]};
       }
 
 `;
@@ -25,26 +25,26 @@ export const Box = styled.div`
 `;
 
 export const Logo = styled(BiCameraMovie)`
-    width: 28px;
-    height: 28px;
-    margin-right: 12px;
+    width: ${p => p.theme.fontSizes[4]};
+    height: ${p => p.theme.fontSizes[4]};
+    margin-right: ${p => p.theme.space[3]};
     color: inherit;
 
-    @media screen and (min-width: 768px) {
-        width: 36px;
-        height: 36px;
-        margin-right: 16px;
+    @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+        width: ${p => p.theme.fontSizes[5]};
+        height: ${p => p.theme.fontSizes[5]};
+        margin-right: ${p => p.theme.space[4]};
       }
 `;
 
 export const StyledLink = styled(NavLink)`
   text-decoration: none;
-  font-size: 28px;
+  font-size: ${p => p.theme.fontSizes[4]};
   padding: 8px;
   color: ${p => p.theme.colors.textStatic};
 
-    @media screen and (min-width: 768px) {
-        font-size: 36px;
+    @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
+        font-size: ${p => p.theme.fontSizes[5]};
       }
 
     &:not(:last-child) {

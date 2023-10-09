@@ -2,13 +2,19 @@ export const theme = {
     breakpoints: { mobile: '480px', tablet: '768px', desktop: '1280px' },
 
     space: [
-      0, //0
-      2, //1
-      4, //2
-      8, //3
-      16, //4
-      32, //5
-      64, //6
+      '0px', //0
+      '2px', //1
+      '4px', //2
+      '8px', //3
+      '12px', //4
+      '16px', //5
+      '20px', //6
+      '24px', //7
+      '32px', //8
+      '40px', //9
+      '48px', //10
+      '60px', //11
+      '80px', //12
     ],
 
     fontSizes: [

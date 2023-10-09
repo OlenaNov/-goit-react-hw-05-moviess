@@ -67,7 +67,7 @@ export const Subtitle = styled.h2`
     color: ${p => p.theme.colors.textStaticItem};
     font-size: 18px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
         font-size: 28px;
       }
 `;
@@ -112,7 +112,7 @@ export const List = styled.ul`
     gap: 20px;
     justify-content: center;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
         flex-direction: row;
         gap: 80px;
       }

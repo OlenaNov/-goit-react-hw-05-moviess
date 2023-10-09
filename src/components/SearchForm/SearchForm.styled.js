@@ -21,11 +21,11 @@ export const Input = styled.input`
         max-width: 200px;
       }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
         width: 500px;
       }
 
-      @media screen and (min-width: 1280px) {
+      @media screen and (min-width: ${p => p.theme.breakpoints.desktop}) {
         width: 600px;
       }
 

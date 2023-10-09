@@ -4,10 +4,10 @@ export const notifyOptionsFailure = () => {
         timeout: 4000,
         width: '400px',
         svgSize: '80px',
-        backgroundColor: 'rgb(204, 0, 0, .7)',
+        backgroundColor: '${p => p.theme.colors.notifyBackground}',
         position: 'right-top',
         distance: '60px',
-        textColor: 'rgb(255, 245, 238, 0.8)',
+        textColor: '${p => p.theme.colors.textStatic}',
         fontSize: '20px',
       };
 };

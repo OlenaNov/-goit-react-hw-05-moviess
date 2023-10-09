@@ -25,7 +25,7 @@ export const theme = {
 
     colors: {
       background: '#210705',
-      headerBackground: 'rgba(0, 0, 0, 0.95);',
+      headerBackground: 'rgba(0, 0, 0, 0.95)',
       itemBackground: 'rgba(0, 0, 0, 0.6)',
       textStatic: 'rgb(255, 245, 238, 0.8)',
       textStaticItem: 'rgb(255, 245, 238, 0.9)',

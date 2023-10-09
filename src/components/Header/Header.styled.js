@@ -10,7 +10,7 @@ export const Wrapper = styled.header`
     justify-content: space-between;
     width: 100%;
     padding: 28px 40px 24px;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: ${p => p.theme.colors.headerBackground};
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 
     @media screen and (min-width: 768px) {
@@ -41,7 +41,7 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
   font-size: 28px;
   padding: 8px;
-  color: rgb(255, 245, 238, 0.8);
+  color: ${p => p.theme.colors.textStatic};
 
     @media screen and (min-width: 768px) {
         font-size: 36px;
@@ -52,14 +52,14 @@ export const StyledLink = styled(NavLink)`
       }
 
     &:hover, &:focus {
-      color: #fff;
+      color: ${p => p.theme.colors.textStaticHover};
     }
 
     &.active {
-        color: #cc0000;
+        color: ${p => p.theme.colors.textActive};
 
         &:hover, &:focus {
-          color: red;
+          color: ${p => p.theme.colors.textActiveHover};
         }
     }
 `;

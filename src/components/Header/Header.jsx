@@ -1,7 +1,7 @@
 import { Box, Logo, StyledLink, Wrapper } from "./Header.styled";
 
 const Header = () => {
-
+    
     return (
         <Wrapper>
             <Box>

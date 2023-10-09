@@ -36,7 +36,7 @@ export const SubTitle = styled.h2`
     margin-block-end: 0;
     margin-bottom: 12px;
     font-size: 24px;
-    color: rgb(255, 245, 238, 0.8);
+    color: ${p => p.theme.colors.textStatic};
 
     @media screen and (max-width: 1024px) {
         font-size: 20px;
@@ -48,7 +48,7 @@ export const Text = styled.p`
     margin-block-end: 0;
     margin-bottom: 12px;
     font-size: 20px;
-    color: rgb(255, 245, 238, 0.8);
+    color: ${p => p.theme.colors.textStatic};
 
     @media screen and (max-width: 1024px) {
         font-size: 16px;

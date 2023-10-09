@@ -37,7 +37,7 @@ const MovieDetails = () => {
 
     return (
     <>
-        {isLoading && <Loader color="rgb(204, 0, 0, .7)" />}
+        {isLoading && <Loader color="${p => p.theme.colors.notifyBackground}" />}
         {infoFilm && (
             <>
             <Movie item={infoFilm} link={backLinkLocationRef.current} />

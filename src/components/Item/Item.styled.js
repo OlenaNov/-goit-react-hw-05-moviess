@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Wrapper = styled.li`
     width: 260px;
     height: 360px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: ${p => p.theme.colors.itemBackground};
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: transform 0.3s ease;
@@ -31,7 +31,7 @@ export const SvgAdult = styled(MdOutlineNoAdultContent)`
     left: 8px;
     width: 28px;
     height: 28px;
-    color: #cc0000;
+    color: ${p => p.theme.colors.textActive};
 `;
 
 export const Details = styled.div`
@@ -51,14 +51,14 @@ export const Title = styled.h2`
     margin-block-end: 0;
     margin-bottom: 12px;
     font-size: 20px;
-    color: rgb(255, 245, 238, 0.8);
+    color: ${p => p.theme.colors.textStatic};
 `;
 
 export const Date = styled.p`
     margin-block-start: 0;
     margin-block-end: 0;
     font-size: 20px;
-    color: rgb(255, 245, 238, 0.8);
+    color: ${p => p.theme.colors.textStatic};
 `;
 
 export const LinkStyled = styled(Link)`

@@ -46,7 +46,7 @@ export const Poster = styled.img`
 `;
 
 export const Title = styled.h1`
-    color: rgb(255, 245, 238, .9);
+    color: ${p => p.theme.colors.textStaticItem};
     font-size: 24px;
 
     @media screen and (min-width: 1024px) {
@@ -55,7 +55,7 @@ export const Title = styled.h1`
 `;
 
 export const Text = styled.p`
-    color: rgb(255, 245, 238, .9);
+    color: ${p => p.theme.colors.textStaticItem};
     font-size: 16px;
 
     @media screen and (min-width: 1024px) {
@@ -64,7 +64,7 @@ export const Text = styled.p`
 `;
 
 export const Subtitle = styled.h2`
-    color: rgb(255, 245, 238, .9);
+    color: ${p => p.theme.colors.textStaticItem};
     font-size: 18px;
 
     @media screen and (min-width: 768px) {
@@ -83,7 +83,7 @@ export const Genre = styled.span`
     border-radius: 8px;
     border: 1px solid rgba(80, 20, 20, .3);
     background: rgba(80, 20, 20, .8);
-    color: rgb(255, 245, 238, .9);
+    color: ${p => p.theme.colors.textStaticItem};
     font-size: 18px;
 
     
@@ -126,12 +126,12 @@ export const StyledNavLink = styled(NavLink)`
     text-decoration: none;
     display: inline-block;
     padding: 8px 20px;
-    background-color: rgb(255, 245, 238, .3);
-    color: rgba(80, 20, 20);
+    background-color: ${p => p.theme.colors.buttonBackgroundStatic};
+    color: ${p => p.theme.colors.buttonContentStatic};
     font-size: 22px;
     font-weight: 600;
     border-radius: 8px;
-    border: 3px solid rgba(80, 20, 20);
+    border: 3px solid ${p => p.theme.colors.buttonContentStatic};
 
     
     @media screen and (min-width: 1024px) {
@@ -141,12 +141,12 @@ export const StyledNavLink = styled(NavLink)`
 
     &:hover, &:focus {
         border-radius: 12px;
-        background-color: rgb(255, 245, 238, .5);
+        background-color: ${p => p.theme.colors.buttonBackgroundHover};
     }
 
     
     &.active {
-        color: rgb(204, 0, 0, .7);
-        background-color: rgb(255, 245, 238, .6);
+        color: ${p => p.theme.colors.notifyBackground};
+        background-color: ${p => p.theme.colors.buttonBackgroundActive};
     }
 `;

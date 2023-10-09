@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 export const Svg = styled.svg`
 margin-left: auto;
 margin-right: auto;
-fill: #fff;
+fill: ${p => p.theme.colors.textStaticHover};
 fill-opacity: 0.95;
 stroke: none;
 `;
@@ -20,5 +20,5 @@ export const Span = styled.span`
 text-decoration: none;
 font-size: 32px;
 padding: 8px;
-color: rgb(255, 245, 238, 0.8);
+color: ${p => p.theme.colors.textStatic};
 `;

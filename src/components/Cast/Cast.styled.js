@@ -10,7 +10,7 @@ export const List = styled.ul`
 export const Item = styled.li`
     width: 200px;
     height: 280px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: ${p => p.theme.colors.itemBackground};
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: transform 0.3s ease;
@@ -46,7 +46,7 @@ export const SubTitle = styled.h2`
     margin-block-end: 0;
     margin-bottom: 12px;
     font-size: 20px;
-    color: rgb(255, 245, 238, 0.8);
+    color: ${p => p.theme.colors.textStatic};
 `;
 
 export const Text = styled.p`
@@ -54,5 +54,5 @@ export const Text = styled.p`
     margin-block-end: 0;
     margin-bottom: 12px;
     font-size: 18px;
-    color: rgb(255, 245, 238, 0.8);
+    color: ${p => p.theme.colors.textStatic};
 `;

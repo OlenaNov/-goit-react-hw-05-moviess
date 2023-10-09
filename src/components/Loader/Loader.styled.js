@@ -18,7 +18,7 @@ stroke: none;
 
 export const Span = styled.span`
 text-decoration: none;
-font-size: 32px;
+font-size: ${p => p.theme.fontSizes[6]};
 padding: 8px;
 color: ${p => p.theme.colors.textStatic};
 `;

@@ -8,13 +8,13 @@ export const Wrapper = styled.div`
 `;
 
 export const Message = styled.p`
-    font-size: 26px;
+    font-size: ${p => p.theme.fontSizes[5]};
     color: ${p => p.theme.colors.textStatic};
 `;
 
 export const StyledLink = styled(Link)`
     padding: 8px;
-    font-size: 30px;
+    font-size: ${p => p.theme.fontSizes[6]};
     color: ${p => p.theme.colors.textStatic};
 `;
 

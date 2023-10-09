@@ -35,11 +35,11 @@ export const SubTitle = styled.h2`
     margin-block-start: 0;
     margin-block-end: 0;
     margin-bottom: 12px;
-    font-size: 24px;
+    font-size: ${p => p.theme.fontSizes[4]};
     color: ${p => p.theme.colors.textStatic};
 
     @media screen and (max-width: 1024px) {
-        font-size: 20px;
+        font-size: ${p => p.theme.fontSizes[3]};
       }
 `;
 
@@ -47,7 +47,7 @@ export const Text = styled.p`
     margin-block-start: 0;
     margin-block-end: 0;
     margin-bottom: 12px;
-    font-size: 20px;
+    font-size: ${p => p.theme.fontSizes[3]};
     color: ${p => p.theme.colors.textStatic};
 
     @media screen and (max-width: 1024px) {

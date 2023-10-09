@@ -10,7 +10,7 @@ export const Input = styled.input`
     border-radius: 5px;
     background-color: ${p => p.theme.colors.inputBackgroundStatic};
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    font-size: 20px;
+    font-size: ${p => p.theme.fontSizes[3]};
     color: ${p => p.theme.colors.textStatic};
 
     &:hover, :focus {
@@ -37,7 +37,7 @@ export const Submit = styled.button`
     border-radius: 5px;
     background-color: ${p => p.theme.colors.inputBackgroundStatic};
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    font-size: 20px;
+    font-size: ${p => p.theme.fontSizes[3]};
     color: ${p => p.theme.colors.textStatic};
 
     &:hover, :focus {

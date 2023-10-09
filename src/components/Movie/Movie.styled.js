@@ -47,28 +47,28 @@ export const Poster = styled.img`
 
 export const Title = styled.h1`
     color: ${p => p.theme.colors.textStaticItem};
-    font-size: 24px;
+    font-size: ${p => p.theme.fontSizes[4]};
 
     @media screen and (min-width: 1024px) {
-        font-size: 36px;
+        font-size: ${p => p.theme.fontSizes[7]};
       }
 `;
 
 export const Text = styled.p`
     color: ${p => p.theme.colors.textStaticItem};
-    font-size: 16px;
+    font-size: ${p => p.theme.fontSizes[2]};
 
     @media screen and (min-width: 1024px) {
-        font-size: 24px;
+        font-size: ${p => p.theme.fontSizes[4]};
       }
 `;
 
 export const Subtitle = styled.h2`
     color: ${p => p.theme.colors.textStaticItem};
-    font-size: 18px;
+    font-size: ${p => p.theme.fontSizes[3]};
 
     @media screen and (min-width: ${p => p.theme.breakpoints.tablet}) {
-        font-size: 28px;
+        font-size: ${p => p.theme.fontSizes[5]};
       }
 `;
 
@@ -84,11 +84,11 @@ export const Genre = styled.span`
     border: 1px solid rgba(80, 20, 20, .3);
     background: rgba(80, 20, 20, .8);
     color: ${p => p.theme.colors.textStaticItem};
-    font-size: 18px;
+    font-size: ${p => p.theme.fontSizes[3]};
 
     
     @media screen and (min-width: 1024px) {
-        font-size: 24px;
+        font-size: ${p => p.theme.fontSizes[4]};
       }
 `;
 
@@ -97,7 +97,7 @@ export const LinkBack = styled(Link)`
     margin-right: auto;
     margin-bottom: 24px;
     padding: 8px;
-    font-size: 20px;
+    font-size: ${p => p.theme.fontSizes[3]};
     color: rgb(204, 0, 0, .9);
 `;
 
@@ -128,14 +128,14 @@ export const StyledNavLink = styled(NavLink)`
     padding: 8px 20px;
     background-color: ${p => p.theme.colors.buttonBackgroundStatic};
     color: ${p => p.theme.colors.buttonContentStatic};
-    font-size: 22px;
+    font-size: ${p => p.theme.fontSizes[4]};
     font-weight: 600;
     border-radius: 8px;
     border: 3px solid ${p => p.theme.colors.buttonContentStatic};
 
     
     @media screen and (min-width: 1024px) {
-        font-size: 26px;
+        font-size: ${p => p.theme.fontSizes[5]};
         padding: 12px 30px;
     }
 
